@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    {{titulo}}
+{% endblock %}
+
+{% block content %}
+
+    {% include 'navbar.html' %}
+
+    <br>
+    <div class="d-flex justify-content-center">
+        <div class="card text-center" style="width: 36rem;">
+            <div class="card-body">
+            <h5 class="card-title">Conteo de años desde {{years.0}} hasta {{years|last}}</h5>
+            <div>
+                <ul class="list-group list-group-flush">
+                    {% for year in years %}
+                        {% if year|divisibleby:2 == True  %}
+                            <li class="list-group-item"> {{year}} (Año par)</li>
+                        {% else %}
+                            <li class="list-group-item"> {{year}} (Año impar)</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+            </div>
+            <a href="/inicio" class="btn btn-primary d-flex justify-content-center">Ir al inicio</a>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Pagina de contacto
+{% endblock %}
+
+{% block content %}
+
+    {% include 'navbar.html' %}
+
+    <!-- Si es una pagina de contacto tendria sentido que sea un formulario -->
+    <div class="container p-5">
+        <div class="row">
+            <!-- Ocupa 4 columnas -->
+            <div class="col-md-4 offset-md-4">
+                <!-- El formulario esta dentro de una tarjeta -->
+                <div class="card">
+                    <!-- Creamos el encabezado -->
+                    <div class="card-header bg-dark text-white text-center">
+                        <h3>
+                            Contact Me (usando POST)
+                        </h3>
+                    </div>
+                    <br>
+                    <!-- Creamos el cuerpo -->
+                    <div class="card-body">
+                        <form action = "{% url 'http_crear_articulo' %}" method = "POST">
+
+                            {% csrf_token %}
+
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Email" name = "title">
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <textarea class="form-control" name="content" id="" cols="30" rows="10" placeholder="Message"></textarea>
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <button class="btn btn-primary btn-block">
+                                    Save
+                                </button>
+                                <a href="/inicio" class="btn btn-primary">Ir al inicio</a>
+                            </div>
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

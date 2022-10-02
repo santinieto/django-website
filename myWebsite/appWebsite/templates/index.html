@@ -1,0 +1,89 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+{% if title %}
+    {{title}}
+{% else %}
+    Página sin título
+{% endif %}
+{% endblock %}
+
+{% block content %}
+    {{ block.super }}
+
+    {% include 'navbar.html' %}
+
+    <br>
+    
+    <div class="d-flex justify-content-center">
+        <div class="card" style="width: 100rem;">
+            <div class="card-body">
+
+                <div class="card" style="width: auto;">
+                    <div class="card-header">
+                    Sobre mí (checkeado con if)
+                    </div>
+                    <div class="card-body">
+                        {% if name == "Santiago Enrique Nieto" %}
+                            <p class="card-text">Mi name es {{name}}, nací en Córdoba el día 10 de abril de 1995</p>
+                        {% else %}
+                            <p class="card-text">Mi name es {{name|default:"name Genérico"}}, nací en Córdoba el día 10 de abril de 1995</p>
+                        {% endif %}
+                        <p class="card-text">Me gusta mucho la música, jugar al padel y estudiar</p>
+                        <a href="https://www.linkedin.com/in/santiago-nieto-29b43a10a/" class="btn btn-primary">LinkedIn</a>
+                        <a href="https://www.instagram.com/_santinieto/" class="btn btn-primary">Instagram</a>
+                    </div>
+                </div>
+
+                <br>
+                
+                <div class="card" style="width: auto;">
+                    <div class="card-header">
+                        Historia laboral
+                </div>
+                <div class="card-body">
+                    <ul class="list-group list-group-light">
+                        <li class="list-group-item">Marvell Technology - Ingeniero Senior C</li>
+                        <li class="list-group-item">GinTea - Becario de investigación</li>
+                    </ul>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="card" style="width: auto;">
+                            <div class="card-header">
+                                Historia académica
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-light">
+                                <li class="list-group-item">Postgrado: Universidad Siglo 21 - Maestría en inteligencia de negocios y explotación de datos</li>
+                                <li class="list-group-item">Grado: UTN FCR - Ingeniería electrónica</li>
+                                <li class="list-group-item">Secundario: Inst. Privado. María Ignacia Navarro de Labat</li>
+                            </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="card" style="width: auto;">
+                            <div class="card-header">
+                                Skills (Con ciclo for y contador)
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-light">
+                                {% for skill in skills %}            
+                                    <li class="list-group-item">{{forloop.counter}}. {{skill}}</li>
+                                {% endfor %}
+                            </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

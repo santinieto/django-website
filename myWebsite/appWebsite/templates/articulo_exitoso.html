@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Creacion de articulo exitosa!
+{% endblock %}
+
+{% block content %}
+    {{ block.super }}
+
+    {% include 'navbar.html' %}
+
+    <br>
+
+    <div class="d-flex justify-content-center">
+        <div class="card" style="width: 100rem;">
+            <div class="card-body">
+
+                <div class="alert alert-success" role="alert">
+                <h4 class="alert-heading">Exito!</h4>
+                <p>Se ha creado el articulo satisfactoriamente</p>
+                <br>
+                <a href="/crear-articulo" class="btn btn-primary">Crear otro articulo</a>
+                <a href="/mostrar-articulos" class="btn btn-primary">Mostrar articulos</a>
+                <a href="/inicio" class="btn btn-primary">Ir al inicio</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

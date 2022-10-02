@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Crear un articulo
+{% endblock %}
+
+{% block content %}
+
+    {% include 'navbar.html' %}
+
+    <br>
+    
+    <div class="d-flex justify-content-center">
+        <div class="card" style="width: 100rem;">
+            <div class="card-body">
+
+                <form action = "{% url 'http_crear_articulo' %}" method = "GET">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Titulo del articulo (usando GET)</label>
+                    <input type="text" class="form-control" id="title" name="title" placeholder="Titulo del articulo">
+                    <div id="textHelp" class="form-text">Puede ser cualquier cosa</div>
+                </div>
+                <div class="mb-3">
+                    <label for="content" class="form-label">Contenido del articulo</label>
+                    <input type="text" class="form-control" id="content" name="content" placeholder="Contenido del articulo">
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="publicCheck" name="public">
+                    <label class="form-check-label" for="publicCheck1">Articulo publico</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

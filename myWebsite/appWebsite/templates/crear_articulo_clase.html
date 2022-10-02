@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Crear un articulo
+{% endblock %}
+
+{% block content %}
+
+    {% include 'navbar.html' %}
+
+    <br>
+    
+    <div class="d-flex justify-content-center">
+        <div class="card" style="width: 100rem;">
+            <div class="card-body">
+
+                <form action = "{% url 'http_crear_articulo' %}" method = "POST">
+                {% csrf_token %}
+
+                <div class="mb-3">                    
+                    {{form.title.label}} <br>
+                    {{form.title}}
+                </div>
+                <div class="mb-3">                    
+                    {{form.content.label}} <br>
+                    {{form.content}}
+                </div>
+                <div class="mb-3">                    
+                    {{form.public}} Articulo público
+                </div>
+
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
+body{
+    background-color: #F2F2F2;
+}
+
+header{
+    width: 1212px;
+    height: 140px;
+    background-color: #23282b;
+    margin: 0px auto;
+}
+
+#logotipo{
+    width: 35%;
+    height: 140px;
+    margin: 0px auto;
+}
+
+#logotipo h1{
+    display: block;
+    float: right;
+    letter-spacing: 2px;
+    margin-top: 45px;
+    font-weight: normal;
+    color: aqua;
+}
+
+#logotipo img{
+    display: block;
+    float: left;
+    width: 60px;
+    margin-top: 20px;
+}

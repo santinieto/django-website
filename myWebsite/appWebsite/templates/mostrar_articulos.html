@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    {{title}}
+{% endblock %}
+
+{% block content %}
+
+    {% include 'navbar.html' %} 
+
+    <br>
+    <div class="d-flex justify-content-center">
+        <div class="card" style="width: 50rem;">
+            <div class="card-body">
+
+                <ul class="list-group list-group-flush">
+                {% for articulo in articulos %}
+
+                <li class="list-group-item d-flex justify-content-between align-items-start">            
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">Articulo {{articulo.id}}: {{articulo.title}}</div>
+                        Contenido: {{articulo.content}} <br>
+                        Publico: {{articulo.public}} <br>                      
+                    </div>        
+                    <div class="p-2 bd-highlight">
+                        <a href="" class="btn btn-primary btn-sm">Editar</a> <br> <br>
+                        <a href="{% url 'borrar_articulo' articulo.id %}" class="btn btn-danger btn-sm">Eliminar</a>
+                    </div>
+                </li>        
+
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="d-flex justify-content-center">
+        <div class="card" style="width: 50rem;">
+            <div class="card-body">
+                <a href="/inicio" class="btn btn-primary d-flex justify-content-center">Ir al inicio</a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

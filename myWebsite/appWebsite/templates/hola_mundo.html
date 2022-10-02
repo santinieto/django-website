@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Hola Mundo!
+{% endblock %}
+
+{% block content %}
+    {{ block.super }}
+
+    {% include 'navbar.html' %}
+
+    <br>
+
+    <div class="d-flex justify-content-center">
+        <div class="card" style="width: 100rem;">
+            <div class="card-body">
+
+                <div class="alert alert-success" role="alert">
+                <h4 class="alert-heading">Hola Mundo!</h4>
+                <p>Bien hecho! Estas viendo mi primer Hola Mundo! usando Python - Django y Bootstrap 5</p>
+                <hr>
+                <p class="mb-0">Primer Hola Mundo por Santiago Nieto</p>
+                <br>
+                <a href="/inicio" class="btn btn-success">Ir al inicio</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

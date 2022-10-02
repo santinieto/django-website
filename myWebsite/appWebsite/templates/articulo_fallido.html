@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Creacion de articulo fallida!
+{% endblock %}
+
+{% block content %}
+    {{ block.super }}
+
+    {% include 'navbar.html' %}
+
+    <br>
+
+    <div class="d-flex justify-content-center">
+        <div class="card" style="width: 100rem;">
+            <div class="card-body">
+
+                <div class="alert alert-danger" role="alert">
+                <h4 class="alert-heading">Alerta!</h4>
+                <p>Algo ha salido mal al crear el articulo :(</p>
+                <br>
+                <a href="/crear-articulo" class="btn btn-primary">Intentar de nuevo</a>
+                <a href="/mostrar-articulos" class="btn btn-primary">Mostrar articulos</a>
+                <a href="/inicio" class="btn btn-primary">Ir al inicio</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
