@@ -3,6 +3,7 @@ from django.http import JsonResponse
 from appWebsite.forms import FormularioArticulo
 from appWebsite.models import Article, Category
 from appWebsite import forms
+from django.contrib import messages
 
 # Respuestas Http básicas
 def httpTitle(text):
@@ -72,6 +73,9 @@ def httpCrearArticulo(request, title = 'Articulo generico', content = 'Contenido
 
         article.save()
 
+        # Mensaje que se muestra por unica vez
+        messages.success(request, f'Mensaje flash: Desde la ultima vez se ha creado el articulo {article.id} con GET')
+
         output = """
         <h1>Articulo creado!!!</h1>
         <h3>Titulo: {}</h3>
@@ -90,6 +94,9 @@ def httpCrearArticulo(request, title = 'Articulo generico', content = 'Contenido
         )
 
         article.save()
+
+        # Mensaje que se muestra por unica vez
+        messages.success(request, f'Mensaje flash: Desde la ultima vez se ha creado el articulo {article.id} con POST')
 
         output = """
         <h1>Articulo creado!!!</h1>
